@@ -6,6 +6,7 @@
     "foundation-3": "davidmyers9000/foundation-3",
     "foundation": "zurb/bower-foundation",
     "jquery-1.11.1": "http://code.jquery.com/jquery-1.11.1.min.js",
-    "normalize.css": "~3.0.1"
+    "normalize.css": "~3.0.1",
+    "bxslider-4": "stevenwanderski/bxslider-4"
   }
 }
