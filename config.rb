@@ -138,8 +138,11 @@ activate :deploy do |deploy|
   deploy.password = "1d5SrAJb"
 end
 
+
 # Build-specific configuration
 configure :build do
+  ignore 'bower_components/**'
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
@@ -153,6 +156,7 @@ configure :build do
   # activate :relative_assets
 
   # set :relative_links, true
+
 
   # Or use a different image path
   set :http_prefix, "/new04/biodiscovery/"
