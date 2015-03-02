@@ -2,6 +2,8 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
+gem "rake"
+
 gem "middleman"
 gem "middleman-deploy"
 
