@@ -141,6 +141,7 @@ end
 
 # Build-specific configuration
 configure :build do
+  # Ignore irrelevant directories during build 
   ignore 'bower_components/**'
 
   # For example, change the Compass output style for deployment
@@ -154,9 +155,7 @@ configure :build do
 
   # Use relative URLs
   # activate :relative_assets
-
   # set :relative_links, true
-
 
   # Or use a different image path
   set :http_prefix, "/new04/biodiscovery/"
