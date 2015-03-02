@@ -11,7 +11,7 @@ compass_config do |config|
   config.add_import_path "bower_components/bxslider-4/"
   
   # Set this to the root of your project when deployed:
-  config.http_path = "/"
+  config.http_path = "/new04/biodiscovery/"
   config.css_dir = "stylesheets"
   config.sass_dir = "stylesheets"
   config.images_dir = "images"
@@ -101,7 +101,16 @@ after_configuration do
   sprockets.append_path File.join "#{root}", @bower_config["directory"]
 end
 
-# set :relative_links, true
+activate :deploy do |deploy|
+  # ...
+  deploy.build_before = false # default: false
+
+  deploy.method   = :ftp
+  deploy.host     = "biomed.drexel.edu"
+  deploy.path     = "/new04/biodiscovery"
+  deploy.user     = "DREXEL\\drm68"
+  deploy.password = "1d5SrAJb"
+end
 
 # Build-specific configuration
 configure :build do
@@ -120,5 +129,5 @@ configure :build do
   # set :relative_links, true
 
   # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+  set :http_prefix, "/new04/biodiscovery/"
 end
