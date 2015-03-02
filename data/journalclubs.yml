@@ -1,0 +1,15 @@
+# upcoming:
+  # - time:
+  #   location:
+  #   title:
+  #   speaker:
+
+past:
+  - time: 2/13/2015 at 12:30PM 
+    location: Bossone Building, Room 302
+    title: MapReduce
+    speaker: Gregory Ditzler
+  - time: 2/27/2015 at 11:30 AM
+    location: Hill Conference Room
+    title: Inferring Functional Modules of Protein Families by Probabilistic Topic Modeling 
+    speaker: Steve Woloszynek

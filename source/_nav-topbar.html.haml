@@ -12,9 +12,9 @@
       - data.pages.each do |page|
         %li.has-dropdown
           - if current_page?(page) || current_page_is_a_sub_page?(page)
-            = link_to page.title, "/#{page.url}", class: "active"
+            = link_to page.title, "/#{page.url}/#{page.sub_pages[0].url}", class: "active"
           - else
-            = link_to page.title, "/#{page.url}"
+            = link_to page.title, "/#{page.url}/#{page.sub_pages[0].url}"
 
           / = link_to page.title, page.url
           %ul.dropdown

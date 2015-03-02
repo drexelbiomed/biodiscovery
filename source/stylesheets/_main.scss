@@ -41,6 +41,11 @@ body {
 
 }
 
+ul.unstyled {
+  list-style: none;
+  margin-left: 0px;
+}
+
 ul.bg-image {
   margin: 0;
   padding: 0;
@@ -100,6 +105,10 @@ ul.bg-image {
   .main-content, .main-content-home, .sidebar-right, .sidebar-left {
     padding-top: 14px;
   }
+}
+
+.parent-link.js-generated {
+  display: none !important;
 }
 
 .columns.sidebar-right {

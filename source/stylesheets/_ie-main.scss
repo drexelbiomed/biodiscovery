@@ -10,6 +10,11 @@ body {
   background-position: top center;
 }
 
+ul.unstyled {
+  list-style: none;
+  margin-left: 0px;
+}
+
 .height {
   min-height: 100%;
   position: relative;
