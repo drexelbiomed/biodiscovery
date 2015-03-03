@@ -6,9 +6,9 @@
         - if page.sub_pages?
           - page.sub_pages.select do |sub|
             - if current_page?(sub)
-              %li= link_to "#{sub.title}", "/#{page.url}/#{sub.url}", class: "active"
+              %li= link_to "#{sub.title}", "#{http_prefix}#{page.url}/#{sub.url}", class: "active"
             - else
-              %li= link_to "#{sub.title}", "/#{page.url}/#{sub.url}"
+              %li= link_to "#{sub.title}", "#{http_prefix}#{page.url}/#{sub.url}"
             / %li= link_to "#{sub.title}", page.url + "/" + sub.url
         - else
           %li= link_to "Overview", "#", class: "active"

@@ -3,7 +3,7 @@
   %ul.unstyled
     - data.events.upcoming.first(3).each do |event|
       %li
-        = link_to "#{event.title.titleize}", "/events/seminars"
+        = link_to "#{event.title.titleize}", "#{http_prefix}events/seminars"
         = " by #{event.speaker}"
         = " - #{event.time}"
-  = link_to "About", "about", class: "more-link"
+  = link_to "Events", "#{http_prefix}events/seminars", class: "more-link"
