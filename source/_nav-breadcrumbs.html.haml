@@ -7,7 +7,7 @@
         %li= "#{page.title}"
       - if current_page_is_a_sub_page?(page)
         %li / 
-        %li= link_to page.title, page.url
+        %li= link_to page.title, "/#{page.url}/#{page.sub_pages[0].url}"
         %li /
         - page.sub_pages.select do |sub|
           - if current_page?(sub)

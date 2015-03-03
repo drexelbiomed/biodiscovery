@@ -1,5 +1,9 @@
 .home-panel
-  %h3 About
+  %h3 Upcoming Events
   %ul.unstyled
-    %li The primary focus of research in our lab is to understand how the brain encodes sensory information and integrates this to produce intelligent motor output. We want to be able to use this knowledge to investigate changes in network activity under conditions of neural injury or dysfunction.
+    - data.events.upcoming.first(3).each do |event|
+      %li
+        = link_to "#{event.title.titleize}", "/events/seminars"
+        = " by #{event.speaker}"
+        = " - #{event.time}"
   = link_to "About", "about", class: "more-link"
