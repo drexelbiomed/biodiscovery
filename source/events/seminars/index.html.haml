@@ -14,10 +14,16 @@ title: Seminars
       = event.location
     %li
       %strong Title: 
-      = event.title
+      - if event.pub_url.length > 1
+        = link_to event.title, event.pub_url
+      - else
+        = event.title
     %li
       %strong Speaker(s): 
-      = event.speaker
+      - if event.speaker_url.length > 1
+        = link_to event.speaker, event.speaker_url
+      - else 
+        = event.speaker
     - if (i != data.events.upcoming.length-1)
       %hr
 %br
@@ -33,9 +39,15 @@ title: Seminars
       = event.location
     %li
       %strong Title: 
-      = event.title
+      - if event.pub_url.length > 1
+        = link_to event.title, event.pub_url
+      - else
+        = event.title
     %li
       %strong Speaker(s): 
-      = event.speaker
+      - if event.speaker_url.length > 1
+        = link_to event.speaker, event.speaker_url
+      - else 
+        = event.speaker
     - if (i != data.events.past.length-1)
       %hr
