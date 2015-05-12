@@ -2,7 +2,9 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "viewpoint-spws"
+# gem "viewpoint-spws"
+
+gem "feedjira"
 
 gem "rake"
 
