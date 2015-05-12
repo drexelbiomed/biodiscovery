@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 
 # gem "viewpoint-spws"
 
-gem "feedjira"
+gem "sharepoint-ruby"
 
 gem "rake"
 

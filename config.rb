@@ -3,6 +3,8 @@
 ###
 require 'rake/file_list'
 require 'pathname'
+require 'sharepoint-ruby'
+
 
 bower_directory = 'source/bower_components'
 
