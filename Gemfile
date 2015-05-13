@@ -2,10 +2,6 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-# gem "viewpoint-spws"
-
-gem "sharepoint-ruby"
-
 gem "rake"
 
 gem "middleman"
