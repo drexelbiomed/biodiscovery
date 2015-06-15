@@ -2,6 +2,10 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
+gem "htmlentities"
+
+gem "feedjira"
+
 gem "rake"
 
 gem "middleman"

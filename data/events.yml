@@ -1,87 +1,114 @@
 upcoming:
-  - time: 5/5/15 at 12:30 PM
-    location: "Bossone Building, Room 302"
-    title: Superbugs at home – using big data to understand the evolution and spread of MRSA in a New York City community
-    speaker: Dr. Janina Dordel
-    pub_url: " "
-    speaker_url: http://www.pages.drexel.edu/~mkg62/dr.-janina-dordel.html
-  - time: 5/13/15 2 PM
-    location: Bossone 302
-    title: Species-Level Diversity of Mollusca
-    speaker: Dr. Gary Rosenberg
-    pub_url: http://www.bioone.org/doi/abs/10.4003/006.032.0204
-    speaker_url: http://drexel.edu/bees/contact/facultyDirectory/Rosenberg/
-  - time: 5/19/15 1:30 PM
-    location: Bossone 302
-    title: Determining HIV-1 Quasispecies Genomic Variability for gRNA Excision Using Dijkstra's Algorithm
-    speaker: Metthew DeSimone
-    pub_url: " "
-    speaker_url: " " 
-
+  - time: 6/4/2015 at 12:00 PM
+    location: "Rush Building, Room 009"
+    location_url: " "
+    title: Amyloid Protein Self-Assembly Examined Through Computer Simulations
+    title_url: " "
+    speaker: Dr. Brigita Urbanc
+    speaker_url: http://drexel.edu/physics/contact/facultyDirectory/Urbanc%20Brigita/
+  - time: 6/9/2015 at 1:00 PM 
+    location: Bossone 705
+    location_url: " "
+    title: "Psoriasis: A Study of Skin Transcriptome and Microbiome"
+    title_url: " "
+    speaker: Ceylan Tanes
+    speaker_url: " "
 past:
   - time: 2/20/2015 at 3:15 PM
     location: "Bossone Building, Room 628/30"
+    location_url: " "
     title: Nucleotide changes from the environment
+    title_url: " "
     speaker: Erin Reichenberger
-    pub_url: " "
     speaker_url: " "
   - time: 3/10/2015 at 1:00 PM
     location: "Speitel Conf. Room in the Lebow Engineering Center, near the Hill Conference Room"
+    location_url: " "
     title: Big Data Analysis of Microbiome Data
+    title_url: " "
     speaker: Tony Yu
-    pub_url: " "
     speaker_url: http://cci.drexel.edu/faculty/thu/
   - time: 3/13/2015 at 10:00 AM
     location: "New College Building (245 N. 15th St.), 18th floor Conference Room"
+    location_url: " "
     title: "HIV, Cas9 excision, and longitudinal variation"
+    title_url: " "
     speaker: Dr. William Dampier
-    pub_url: " "
     speaker_url: http://www.biomed.drexel.edu/new04/content/academics/faculty/dsp_faculty_details.cfm?RECID=261
   - time: 3/20/2015 at 9:30 AM
     location: "Alumni Engineering Lab Bldg., Room 276"
+    location_url: " "
     title: Deciphering the interactions of interspecies metabolisms
+    title_url: " "
     speaker: Yemin Lan
-    pub_url: " "
     speaker_url: http://yeminlan.com/
   - time: 4/3/2015 at 12 PM 
     location: "Bossone Building, Room 302"
+    location_url: " "
     title: Biomedical Image Informatics
+    title_url: " "
     speaker: Dr. David Breen
-    pub_url: " "
     speaker_url: https://www.cs.drexel.edu/~david/
   - time: 4/10/2015 at 2 PM
     location: "New College Building (245 N. 15th St.), 17th floor Center for Genomic Sciences conference room #113 "
+    location_url: " "
     title: Insights into bacterial pathogenesis using comparative and experimental genomics in Haemophilus influenzae
+    title_url: " "
     speaker: Dr. Joshua Mell
-    pub_url: " "
     speaker_url: http://www.drexelmed.edu/Home/AboutOurFaculty/JoshuaMell.aspx
   - time: 4/15/15 at 3 PM
     location: "Bossone Building, Room 302"
+    location_url: " "
     title: Scalable Subset Selection with Filters and Its Application
+    title_url: " "
     speaker: Gregory Ditzler
-    pub_url: " "
     speaker_url: http://gregoryditzler.com/
   - time: 4/16/15 at 5 PM
     location: "Bossone Building, Room 302"
+    location_url: " "
     title: A Unifying Framework for Information Theoretic Feature Selection
+    title_url: " "
     speaker: Dr. Gavin Brown
-    pub_url: " "
     speaker_url: http://www.cs.man.ac.uk/~gbrown/
   - time: 4/24/2015 at 12:30PM
     location: Hill Conference Room
+    location_url: " "
     title: Species-Level Diversity of Mollusca
+    title_url: " "
     speaker: Dr. Gary Rosenberg 
-    pub_url: " "
     speaker_url: http://drexel.edu/bees/contact/facultyDirectory/Rosenberg/
   - time: 4/27/15 at 9 AM
     location: "Bossone Building, Room 302"
+    location_url: " "
     title: "Environment & Microbial Communities – Interactions, Influence, & Analysis"
+    title_url: " "
     speaker: Erin Reichenberger
-    pub_url: " "
     speaker_url: " "
+  - time: 5/5/15 at 12:30 PM
+    location: "Bossone Building, Room 302"
+    location_url: " "
+    title: Superbugs at home – using big data to understand the evolution and spread of MRSA in a New York City community
+    title_url: " "
+    speaker: Dr. Janina Dordel
+    speaker_url: http://www.pages.drexel.edu/~mkg62/dr.-janina-dordel.html
+  - time: 5/13/15 2 PM
+    location: Bossone 302
+    location_url: " "
+    title: Species-Level Diversity of Mollusca
+    title_url: http://www.bioone.org/doi/abs/10.4003/006.032.0204
+    speaker: Dr. Gary Rosenberg
+    speaker_url: http://drexel.edu/bees/contact/facultyDirectory/Rosenberg/
+  - time: 5/19/15 1:30 PM
+    location: Bossone 302
+    location_url: " "
+    title: Determining HIV-1 Quasispecies Genomic Variability for gRNA Excision Using Dijkstra's Algorithm
+    title_url: " "
+    speaker: Metthew DeSimone
+    speaker_url: " " 
   # - time: 
   #   location: 
+  #   location_url:
   #   title: 
+  #   title_url: 
   #   speaker: 
-  #   pub_url: 
   #   speaker_url: 

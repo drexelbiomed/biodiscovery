@@ -90,6 +90,33 @@ set :images_dir, 'images'
 set :haml, { :ugly => true, :format => :html5 }
 
 helpers do
+  class Event
+    attr_reader :location, :time, :speaker, :event_type, :title
+
+    def initialize(location, time, speaker, event_type, title)
+      @location = location
+      @time = time
+      @speaker = speaker
+      @event_type = event_type
+      @title = title
+    end
+
+    def ==(other)
+      self.class === other and
+      other.location == @location and
+      other.time == @time and
+      other.speaker == @speaker and
+      other.event_type == @event_type and
+      other.title == @title
+    end
+
+    alias eql? ==
+
+    def hash
+      @location.hash ^ @time.hash ^ @speaker.hash ^ @event_type.hash ^ @title.hash #XOR
+    end
+  end
+
   def current_page?(page)
     if page.title == current_page.data.title
       return true
@@ -119,7 +146,60 @@ helpers do
     end
     return a
   end
+
+  def rss_feed
+    feed = Feedjira::Feed::fetch_and_parse("https://colleges.moss.drexel.edu/biomed/news/_layouts/listfeed.aspx?List=%7B9F69F06D-EE35-4190-B980-BAEFD51F908A%7D")
+    feed.entries.each do |entry|
+      # Alias for entry.summary 
+        es = entry.summary
+      # Clean up data
+        es.gsub!(":</b> \n", ":</b> ")
+        # es.gsub!("<b>Time", "\n<b>Time")
+        es.gsub!('<div>','')
+        es.gsub!('</div>','')
+      # Remove new lines
+        10.times do
+          es.gsub!("\n\n", "")
+        end
+      # Remove labels
+        # es.gsub!(/<b(.{3,22})b>/, "")
+      # Decode HTML Entities
+        es = HTMLEntities.new.decode es
+      # Remove extra whitespace
+        # es.lstrip!
+      # Split string into array
+        a = es.lines
+      # Conditional fix formatting errors
+        if a[0].include?("<b>Time") == true
+          # Separate to 2 lines
+            a_split = a[0].gsub!("<b>Time", "-<b>Time").split("-")
+            a.shift
+            a.insert(0, a_split[0], a_split[1])
+        end
+
+        if !(a[1].include?("<b>Time")) == true
+          a_concat = [a[0], a[1]].join
+          a_concat.gsub!("\n", ' ').squeeze!(' ')
+          a.shift(2)
+          a.insert(0, a_concat)
+        end
+
+        puts "1: " + a[0]
+        puts "2: " + a[1]
+        puts "3: " + a[2]
+        puts "4: " + a[3]
+        # puts "5: " + a[4]
+        puts "__________"
+
+      # Map Array to hash
+      # event = Event.new location, time, speaker, event_type, title
+      # Push hash onto array
+      # puts event.inspect
+    end
+  end
+  # Return array of Event hashes
 end
+
 
 # Add bower's directory to sprockets asset path
 after_configuration do

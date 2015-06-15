@@ -3,6 +3,9 @@ title: Seminars
 ---
 %h2= current_page.data.title
 
+%h3 Feedjira test
+= rss_feed
+
 %h3 Upcoming
 - data.events.upcoming.each_with_index do |event, i|
   %ul.unstyled
@@ -14,8 +17,8 @@ title: Seminars
       = event.location
     %li
       %strong Title: 
-      - if event.pub_url.length > 1
-        = link_to event.title, event.pub_url
+      - if event.title_url.length > 1
+        = link_to event.title, event.title_url
       - else
         = event.title
     %li
@@ -39,8 +42,8 @@ title: Seminars
       = event.location
     %li
       %strong Title: 
-      - if event.pub_url.length > 1
-        = link_to event.title, event.pub_url
+      - if event.title_url.length > 1
+        = link_to event.title, event.title_url
       - else
         = event.title
     %li
