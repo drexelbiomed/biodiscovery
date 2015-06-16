@@ -11,10 +11,8 @@
 - title: Events
   url: events
   sub_pages:
-    - title: Seminars
-      url: seminars
-    - title: Journal Clubs
-      url: journal-clubs
+    - title: Events List
+      url: events_list
 - title: News
   url: news
   sub_pages:

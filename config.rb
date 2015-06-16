@@ -3,6 +3,7 @@
 ###
 require 'rake/file_list'
 require 'pathname'
+require 'date'
 
 bower_directory = 'source/bower_components'
 
@@ -90,7 +91,7 @@ set :images_dir, 'images'
 set :haml, { :ugly => true, :format => :html5 }
 
 helpers do
-  class Event
+  class Seminar
     attr_reader :location, :time, :speaker, :event_type, :title
 
     def initialize(location, time, speaker, event_type, title)
@@ -148,7 +149,10 @@ helpers do
   end
 
   def rss_feed
+    
     feed = Feedjira::Feed::fetch_and_parse("https://colleges.moss.drexel.edu/biomed/news/_layouts/listfeed.aspx?List=%7B9F69F06D-EE35-4190-B980-BAEFD51F908A%7D")
+    events = []
+    
     feed.entries.each do |entry|
       # Alias for entry.summary 
         es = entry.summary
@@ -157,14 +161,15 @@ helpers do
         # es.gsub!("<b>Time", "\n<b>Time")
         es.gsub!('<div>','')
         es.gsub!('</div>','')
-      # Remove new lines
-        10.times do
-          es.gsub!("\n\n", "")
-        end
-      # Remove labels
-        # es.gsub!(/<b(.{3,22})b>/, "")
       # Decode HTML Entities
         es = HTMLEntities.new.decode es
+        # es.gsub!("<a href=\"<a href=\"", "<a href=\"")
+        # 10.times do
+        # end
+      # Remove new lines
+        2.times do
+          es.gsub!("\n\n", "")
+        end
       # Remove extra whitespace
         # es.lstrip!
       # Split string into array
@@ -172,7 +177,7 @@ helpers do
       # Conditional fix formatting errors
         if a[0].include?("<b>Time") == true
           # Separate to 2 lines
-            a_split = a[0].gsub!("<b>Time", "-<b>Time").split("-")
+            a_split = a[0].gsub!("<b>Time", "*<b>Time").split("*")
             a.shift
             a.insert(0, a_split[0], a_split[1])
         end
@@ -184,20 +189,63 @@ helpers do
           a.insert(0, a_concat)
         end
 
-        puts "1: " + a[0]
-        puts "2: " + a[1]
-        puts "3: " + a[2]
-        puts "4: " + a[3]
-        # puts "5: " + a[4]
-        puts "__________"
+        if a[2].include?("<b>Event Type") == true
+          # Separate to 2 lines
+            a_split = a[2].gsub!("<b>Event Type", "*<b>Event Type").split("*")
+            a.delete_at(2)
+            a.insert(2, a_split[0], a_split[1])
+        end
+
+        if !(a[3].include?("<b>Event Type")) == true
+          a_concat = [a[2], a[3]].join
+          a_concat.gsub!("\n", ' ').squeeze!(' ')
+          a.delete_at(2)
+          a.delete_at(2)
+          a.insert(2, a_concat)
+        end
+
+        if a.length == 6
+          a_concat = [a[4], a[5]].join
+          a_concat.gsub!("\n", ' ').squeeze!(' ')
+          a.delete_at(4)
+          a.delete_at(4)
+          a.insert(4, a_concat)
+        end
+
+      # Remove labels
+        a.each do |e|
+          e.gsub!(/<b(.{3,22})b>/, "")
+          e.squeeze!(' ')
+        end
+
+
+      location   = a[0].strip!
+      time       = a[1].strip!
+      speaker    = a[2].strip!
+      event_type = a[3].strip!
+      title      = a[4].strip!
+
+      time = DateTime.strptime("#{time}", '%m/%d/%Y %I:%M %p')
+
+      # puts "1: " + a[0]
+      # puts "2: " + a[1]
+      # puts "3: " + a[2]
+      # puts "4: " + a[3]
+      # puts "5: " + a[4]
+      # puts "Length is #{a.length}"
+      # puts "__________"
 
       # Map Array to hash
-      # event = Event.new location, time, speaker, event_type, title
       # Push hash onto array
-      # puts event.inspect
+      # events << Hash.new(:location => location, :time => time, :speaker => speaker, :event_type => event_type, :title => title)
+      events << {:location => location, :time => time, :speaker => speaker, :event_type => event_type, :title => title}
     end
+
+    # Order descending date
+    events = events.sort_by{ |hash| hash[:time] }.reverse
+    return events
+
   end
-  # Return array of Event hashes
 end
 
 
