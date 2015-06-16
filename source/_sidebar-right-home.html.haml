@@ -1,9 +1,9 @@
 .home-panel
   %h3 Upcoming Events
   %ul.unstyled
-    - data.events.upcoming.first(3).each do |event|
+    - rss_feed.first(2).each do |event|
       %li
-        = link_to "#{event.title.titleize}", "#{http_prefix}events/seminars"
-        = " by #{event.speaker}"
-        = " - #{event.time}"
-  = link_to "Events", "#{http_prefix}events/seminars", class: "more-link"
+        = link_to "#{event[:title].titleize}", "#{http_prefix}events/events_list"
+        = " by #{Sanitize.fragment(event[:speaker])}"
+        = " - #{event[:time].strftime("%m/%d/%Y %I:%M %p")}"
+  = link_to "Events", "#{http_prefix}events/events_list", class: "more-link"

@@ -3,6 +3,7 @@
 source 'http://rubygems.org'
 
 gem "htmlentities"
+gem "sanitize"
 
 gem "feedjira"
 
