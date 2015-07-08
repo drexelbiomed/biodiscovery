@@ -36,7 +36,7 @@ compass_config do |config|
   config.add_import_path "bower_components/foundation-3/stylesheets"
   config.add_import_path "bower_components/normalize/"
   config.add_import_path "bower_components/bxslider-4/"
-  
+
   # Set this to the root of your project when deployed:
   config.http_path = "/new04/biodiscovery/"
   config.css_dir = "stylesheets"
@@ -149,12 +149,12 @@ helpers do
   end
 
   def rss_feed
-    
+
     feed = Feedjira::Feed::fetch_and_parse("https://colleges.moss.drexel.edu/biomed/news/_layouts/listfeed.aspx?List=%7B9F69F06D-EE35-4190-B980-BAEFD51F908A%7D")
     events = []
-    
+
     feed.entries.each do |entry|
-      # Alias for entry.summary 
+      # Alias for entry.summary
         es = entry.summary
       # Clean up data
         es.gsub!(":</b> \n", ":</b> ")
@@ -260,16 +260,16 @@ activate :deploy do |deploy|
   deploy.build_before = false # default: false
 
   deploy.method   = :ftp
-  deploy.host     = "biomed.drexel.edu"
-  deploy.path     = "/new04/biodiscovery"
-  deploy.user     = "DREXEL\\drm68"
-  deploy.password = "1d5SrAJb"
+  deploy.host     = data.ftp.host
+  deploy.path     = data.ftp.path
+  deploy.user     = data.ftp.user
+  deploy.password = data.ftp.pass
 end
 
 
 # Build-specific configuration
 configure :build do
-  # Ignore irrelevant directories during build 
+  # Ignore irrelevant directories during build
   ignore 'bower_components/**'
 
   # For example, change the Compass output style for deployment

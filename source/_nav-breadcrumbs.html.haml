@@ -1,12 +1,12 @@
 %nav.breadcrumb
   %ul
-    %li= link_to "Home", "/"
+    %li= link_to "Home", "#{http_prefix}"
     - data.pages.select do |page|
-      - if current_page?(page) 
-        %li / 
+      - if current_page?(page)
+        %li /
         %li= "#{page.title}"
       - if current_page_is_a_sub_page?(page)
-        %li / 
+        %li /
         %li= link_to page.title, "#{http_prefix}#{page.url}/#{page.sub_pages[0].url}"
         %li /
         - page.sub_pages.select do |sub|
