@@ -38,7 +38,7 @@ compass_config do |config|
   config.add_import_path "bower_components/bxslider-4/"
 
   # Set this to the root of your project when deployed:
-  config.http_path = "/new04/biodiscovery/"
+  config.http_path = "/new04/sitecore-clone/"
   config.css_dir = "stylesheets"
   config.sass_dir = "stylesheets"
   config.images_dir = "images"
@@ -286,5 +286,5 @@ configure :build do
   # set :relative_links, true
 
   # Or use a different image path
-  set :http_prefix, "/new04/biodiscovery/"
+  set :http_prefix, "/new04/sitecore-clone/"
 end
