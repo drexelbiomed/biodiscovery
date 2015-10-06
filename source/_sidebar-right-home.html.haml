@@ -3,7 +3,7 @@
   %ul.unstyled
     - rss_feed.first(2).each do |event|
       %li
-        = link_to "#{event[:title].titleize}", "#{http_prefix}events/events_list"
+        = link_to "#{Sanitize.fragment(event[:title]).titleize}", "#{http_prefix}events/events_list"
         = " by #{Sanitize.fragment(event[:speaker])}"
         = " - #{event[:time].strftime("%m/%d/%Y %I:%M %p")}"
   = link_to "Events", "#{http_prefix}events/events_list", class: "more-link"
