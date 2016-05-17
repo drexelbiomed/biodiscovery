@@ -1,7 +1,7 @@
 @mixin font-stack {
   font-family: FuturaBold, sans-serif;
   text-transform: uppercase;
-} 
+}
 
 body {
   background-image: image-url("wide.jpg");
@@ -18,7 +18,7 @@ body {
   @media #{$small-only} {
     padding-bottom: 300px;
   }
-  
+
   @media #{$medium-up} {
     width: 720px;
     margin: 0 auto;
@@ -112,12 +112,12 @@ ul.bg-image {
 }
 
 .columns.sidebar-right {
-  @media #{$medium-only} { 
+  @media #{$medium-only} {
     width: 24%;
-    padding: 14px 10px; 
+    padding: 14px 10px;
   }
   &.home {
-    @media #{$medium-only} { 
+    @media #{$medium-only} {
       width: 25%;
     }
   }
@@ -162,4 +162,8 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
+}
+
+hr {
+  margin-top: 0px;
 }
