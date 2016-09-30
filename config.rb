@@ -154,90 +154,33 @@ helpers do
     events = []
 
     feed.entries.each do |entry|
-      # Alias for entry.summary
-        es = entry.summary
-      # Clean up data
-        es.gsub!(":</b> \n", ":</b> ")
-        # es.gsub!("<b>Time", "\n<b>Time")
-        es.gsub!('<div>','')
-        es.gsub!('</div>','')
-      # Decode HTML Entities
-        es = HTMLEntities.new.decode es
-        # es.gsub!("<a href=\"<a href=\"", "<a href=\"")
-        # 10.times do
-        # end
-      # Remove new lines
-        2.times do
-          es.gsub!("\n\n", "")
-        end
-      # Remove extra whitespace
-        # es.lstrip!
-      # Split string into array
-        a = es.lines
-      # Conditional fix formatting errors
-        if a[0].include?("<b>Time") == true
-          # Separate to 2 lines
-            a_split = a[0].gsub!("<b>Time", "*<b>Time").split("*")
-            a.shift
-            a.insert(0, a_split[0], a_split[1])
-        end
+      event_details = [] # Set up event container
 
-        if !(a[1].include?("<b>Time")) == true
-          a_concat = [a[0], a[1]].join
-          a_concat.gsub!("\n", ' ').squeeze!(' ')
-          a.shift(2)
-          a.insert(0, a_concat)
-        end
+      entry = entry.summary # Grab only the RSS entry contents
+      entry.gsub!("\n", "") # Remove messy \n tags
 
-        if a[2].include?("<b>Event Type") == true
-          # Separate to 2 lines
-            a_split = a[2].gsub!("<b>Event Type", "*<b>Event Type").split("*")
-            a.delete_at(2)
-            a.insert(2, a_split[0], a_split[1])
-        end
+      ntree = Nokogiri::HTML(entry) # Parse into nokogiri
+      ntree.search('b').each do |b| # Remove <b> tags
+        b.remove
+      end
 
-        if !(a[3].include?("<b>Event Type")) == true
-          a_concat = [a[2], a[3]].join
-          a_concat.gsub!("\n", ' ').squeeze!(' ')
-          a.delete_at(2)
-          a.delete_at(2)
-          a.insert(2, a_concat)
-        end
+      nodes = ntree.search('div') # Separate each <div> into separate fields
+      nodes.map do |node|
+        clean = node.inner_html.strip
+        clean = HTMLEntities.new.decode clean
+        event_details << clean
+      end
 
-        if a.length == 6
-          a_concat = [a[4], a[5]].join
-          a_concat.gsub!("\n", ' ').squeeze!(' ')
-          a.delete_at(4)
-          a.delete_at(4)
-          a.insert(4, a_concat)
-        end
-
-      # Remove labels
-        a.each do |e|
-          e.gsub!(/<b(.{3,22})b>/, "")
-          e.squeeze!(' ')
-        end
-
-
-      location   = a[0].strip!
-      time       = a[1].strip!
-      speaker    = a[2].strip!
-      event_type = a[3].strip!
-      title      = a[4].strip!
+      location   = event_details[0]
+      time       = event_details[1]
+      speaker    = event_details[2]
+      event_type = event_details[3]
+      title      = event_details[4]
 
       time = DateTime.strptime("#{time}", '%m/%d/%Y %I:%M %p')
 
-      # puts "1: " + a[0]
-      # puts "2: " + a[1]
-      # puts "3: " + a[2]
-      # puts "4: " + a[3]
-      # puts "5: " + a[4]
-      # puts "Length is #{a.length}"
-      # puts "__________"
-
       # Map Array to hash
       # Push hash onto array
-      # events << Hash.new(:location => location, :time => time, :speaker => speaker, :event_type => event_type, :title => title)
       events << {:location => location, :time => time, :speaker => speaker, :event_type => event_type, :title => title}
     end
 
@@ -246,6 +189,26 @@ helpers do
     return events
 
   end
+
+  def home_event(event, type)
+    max_length = 120
+    if type == "title"
+      if event[:title].length > max_length
+        event[:title].titleize.slice(0, max_length).insert(-1, "...")
+      else
+        event[:title].titleize
+      end
+    elsif type == "speaker"
+      if event[:speaker].length > max_length
+        event[:speaker].slice(0, max_length).insert(-1, "...")
+      else
+        event[:speaker]
+      end
+    elsif type == "time"
+      event[:time].strftime("%A, %b %d, %Y – %l:%M %p")
+    end
+  end
+
 end
 
 
