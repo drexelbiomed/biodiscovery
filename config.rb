@@ -191,12 +191,12 @@ helpers do
   end
 
   def home_event(event, type)
-    max_length = 120
+    max_length = 200
     if type == "title"
       if event[:title].length > max_length
-        event[:title].titleize.slice(0, max_length).insert(-1, "...")
+        event[:title].slice(0, max_length).insert(-1, "...")
       else
-        event[:title].titleize
+        event[:title]
       end
     elsif type == "speaker"
       if event[:speaker].length > max_length
