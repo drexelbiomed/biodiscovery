@@ -4,6 +4,7 @@
 require 'rake/file_list'
 require 'pathname'
 require 'date'
+require 'httparty'
 
 bower_directory = 'source/bower_components'
 
@@ -149,8 +150,8 @@ helpers do
   end
 
   def rss_feed
-
-    feed = Feedjira::Feed::fetch_and_parse("https://colleges.moss.drexel.edu/biomed/news/_layouts/listfeed.aspx?List=%7B9F69F06D-EE35-4190-B980-BAEFD51F908A%7D")
+    xml = HTTParty.get('https://colleges.moss.drexel.edu/biomed/news/_layouts/listfeed.aspx?List=%7B9F69F06D-EE35-4190-B980-BAEFD51F908A%7D').body
+    feed = Feedjira.parse(xml)
     events = []
 
     feed.entries.each do |entry|
@@ -187,7 +188,6 @@ helpers do
     # Order descending date
     events = events.sort_by{ |hash| hash[:time] }.reverse
     return events
-
   end
 
   def home_event(event, type)
@@ -208,7 +208,6 @@ helpers do
       event[:time].strftime("%A, %b %d, %Y – %l:%M %p")
     end
   end
-
 end
 
 
