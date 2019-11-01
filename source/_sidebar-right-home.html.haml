@@ -1,7 +1,7 @@
 .home-panel
   %h3 Upcoming Events
   %ul.unstyled
-    - rss_feed.first(8).reverse.first(3).each do |event|
+    - rss_feed.first(4).reverse.first(3).each do |event|
       %li
         %strong= home_event(event, "title")
         %br
