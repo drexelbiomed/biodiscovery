@@ -191,7 +191,7 @@ helpers do
   end
 
   def home_event(event, type)
-    max_length = 200
+    max_length = 99999
     if type == "title"
       if event[:title].length > max_length
         event[:title].slice(0, max_length).insert(-1, "...")
