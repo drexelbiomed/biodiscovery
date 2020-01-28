@@ -1,11 +1,11 @@
 .home-panel
   %h3 Upcoming Events
   %ul.unstyled
-    - rss_feed.first(4).reverse.each do |event|
+    - data.events.first(2).each do |event|
       %li
-        %strong= home_event(event, "title")
+        %strong= event.Title
         %br
-        = home_event(event, "speaker")
+        = event.Speaker
         %br
-        = home_event(event, "time")
+        = event.DateTime
   = link_to "Events", "#{http_prefix}events/events_list", class: "more-link"

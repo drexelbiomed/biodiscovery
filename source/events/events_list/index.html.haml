@@ -3,21 +3,21 @@ title: Events List
 ---
 %h2= current_page.data.title
 
-- rss_feed.each_with_index do |e, i|
+- data.events.each do |event|
   %ul.unstyled
     %li
       %strong Date:
-      = e[:time].strftime("%A, %b %d, %Y – %l:%M %p")
+      = event.DateTime
       %br
       %strong Location:
-      = e[:location]
+      = event.Location
       %br
       %strong Title:
-      = e[:title]
+      = event.Title
       %br
       %strong Speaker:
-      = e[:speaker]
+      = event.Speaker
       %br
       %strong Event Type:
-      = e[:event_type]
+      = event.Category
       %hr

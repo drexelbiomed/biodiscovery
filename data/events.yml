@@ -1,114 +1,65 @@
-upcoming:
-  - time: 6/4/2015 at 12:00 PM
-    location: "Rush Building, Room 009"
-    location_url: " "
-    title: Amyloid Protein Self-Assembly Examined Through Computer Simulations
-    title_url: " "
-    speaker: Dr. Brigita Urbanc
-    speaker_url: http://drexel.edu/physics/contact/facultyDirectory/Urbanc%20Brigita/
-  - time: 6/9/2015 at 1:00 PM 
-    location: Bossone 705
-    location_url: " "
-    title: "Psoriasis: A Study of Skin Transcriptome and Microbiome"
-    title_url: " "
-    speaker: Ceylan Tanes
-    speaker_url: " "
-past:
-  - time: 2/20/2015 at 3:15 PM
-    location: "Bossone Building, Room 628/30"
-    location_url: " "
-    title: Nucleotide changes from the environment
-    title_url: " "
-    speaker: Erin Reichenberger
-    speaker_url: " "
-  - time: 3/10/2015 at 1:00 PM
-    location: "Speitel Conf. Room in the Lebow Engineering Center, near the Hill Conference Room"
-    location_url: " "
-    title: Big Data Analysis of Microbiome Data
-    title_url: " "
-    speaker: Tony Yu
-    speaker_url: http://cci.drexel.edu/faculty/thu/
-  - time: 3/13/2015 at 10:00 AM
-    location: "New College Building (245 N. 15th St.), 18th floor Conference Room"
-    location_url: " "
-    title: "HIV, Cas9 excision, and longitudinal variation"
-    title_url: " "
-    speaker: Dr. William Dampier
-    speaker_url: http://www.biomed.drexel.edu/new04/content/academics/faculty/dsp_faculty_details.cfm?RECID=261
-  - time: 3/20/2015 at 9:30 AM
-    location: "Alumni Engineering Lab Bldg., Room 276"
-    location_url: " "
-    title: Deciphering the interactions of interspecies metabolisms
-    title_url: " "
-    speaker: Yemin Lan
-    speaker_url: http://yeminlan.com/
-  - time: 4/3/2015 at 12 PM 
-    location: "Bossone Building, Room 302"
-    location_url: " "
-    title: Biomedical Image Informatics
-    title_url: " "
-    speaker: Dr. David Breen
-    speaker_url: https://www.cs.drexel.edu/~david/
-  - time: 4/10/2015 at 2 PM
-    location: "New College Building (245 N. 15th St.), 17th floor Center for Genomic Sciences conference room #113 "
-    location_url: " "
-    title: Insights into bacterial pathogenesis using comparative and experimental genomics in Haemophilus influenzae
-    title_url: " "
-    speaker: Dr. Joshua Mell
-    speaker_url: http://www.drexelmed.edu/Home/AboutOurFaculty/JoshuaMell.aspx
-  - time: 4/15/15 at 3 PM
-    location: "Bossone Building, Room 302"
-    location_url: " "
-    title: Scalable Subset Selection with Filters and Its Application
-    title_url: " "
-    speaker: Gregory Ditzler
-    speaker_url: http://gregoryditzler.com/
-  - time: 4/16/15 at 5 PM
-    location: "Bossone Building, Room 302"
-    location_url: " "
-    title: A Unifying Framework for Information Theoretic Feature Selection
-    title_url: " "
-    speaker: Dr. Gavin Brown
-    speaker_url: http://www.cs.man.ac.uk/~gbrown/
-  - time: 4/24/2015 at 12:30PM
-    location: Hill Conference Room
-    location_url: " "
-    title: Species-Level Diversity of Mollusca
-    title_url: " "
-    speaker: Dr. Gary Rosenberg 
-    speaker_url: http://drexel.edu/bees/contact/facultyDirectory/Rosenberg/
-  - time: 4/27/15 at 9 AM
-    location: "Bossone Building, Room 302"
-    location_url: " "
-    title: "Environment & Microbial Communities – Interactions, Influence, & Analysis"
-    title_url: " "
-    speaker: Erin Reichenberger
-    speaker_url: " "
-  - time: 5/5/15 at 12:30 PM
-    location: "Bossone Building, Room 302"
-    location_url: " "
-    title: Superbugs at home – using big data to understand the evolution and spread of MRSA in a New York City community
-    title_url: " "
-    speaker: Dr. Janina Dordel
-    speaker_url: http://www.pages.drexel.edu/~mkg62/dr.-janina-dordel.html
-  - time: 5/13/15 2 PM
-    location: Bossone 302
-    location_url: " "
-    title: Species-Level Diversity of Mollusca
-    title_url: http://www.bioone.org/doi/abs/10.4003/006.032.0204
-    speaker: Dr. Gary Rosenberg
-    speaker_url: http://drexel.edu/bees/contact/facultyDirectory/Rosenberg/
-  - time: 5/19/15 1:30 PM
-    location: Bossone 302
-    location_url: " "
-    title: Determining HIV-1 Quasispecies Genomic Variability for gRNA Excision Using Dijkstra's Algorithm
-    title_url: " "
-    speaker: Metthew DeSimone
-    speaker_url: " " 
-  # - time: 
-  #   location: 
-  #   location_url:
-  #   title: 
-  #   title_url: 
-  #   speaker: 
-  #   speaker_url: 
+- DateTime: 3/16/2020 12:00 AM
+  Title: Propagation of uncertainty improves the quality of microbiome data analysis
+  Speaker: <a href="https://whitmanlab.soils.wisc.edu/lab-members/dr-jacob-price/">Dr. Jacob Price</a>
+  Location: TBA
+  Category: Seminar
+- DateTime: 2/12/2020 2:00 PM
+  Title: Can Data Science Save The Environment?
+  Speaker: <a href="https://www.hsph.harvard.edu/francesca-dominici/">Francesca Dominici</a>
+  Location: Stein Auditorium, Nesbitt Hall
+  Category: Seminar
+- DateTime: 1/16/2020 5:00 PM
+  Title: University Research Computing Facility Proteus Users Meetup
+  Speaker: Taha Aslani
+  Location: Bossone 302
+  Category: Journal Club
+- DateTime: 12/19/2019 5:00 PM
+  Title: University Research Computing Facility Proteus Users Meetup
+  Speaker: Taha Aslani
+  Location: Bossone 302
+  Category: Journal Club
+- DateTime: 11/21/2019 4:00 PM
+  Title: University Research Computing Facility Proteus Users Meetup
+  Speaker: Taha Aslani and Zhengqiao Zhao
+  Location: Hill Conference Room, LeBow Engineering Center
+  Category: Journal Club
+- DateTime: 11/14/2019 4:00 PM
+  Title: Monthly Metagenomics Data Science Meetup
+  Speaker: Zhengqiao Zhao and Angela Fasnacht
+  Location: IEE Conf. Room, Room 200, 2nd Floor of 3101 Market St.
+  Category: Journal Club
+- DateTime: 10/24/2019 5:00 PM
+  Title: University Research Computing Facility Proteus Users Meetup
+  Speaker: Taha Aslani and Zhengqiao Zhao
+  Location: Bossone 302
+  Category: Journal Club
+- DateTime: 10/3/2019 4:00 PM
+  Title: Monthly Metagenomics Big Data/Data Science Meet-Up
+  Speaker: N/A
+  Location: IEE Conference Room, 2nd floor of 3101 Market. St.
+  Category: Journal Club
+- DateTime: 11/19/2019 3:00 PM
+  Title: Mathematical Modeling of Phytoplankton Distributions in Freshwater Ecosystems
+  Speaker: <a href="https://drexel.edu/coas/faculty-research/faculty-directory/stojsavljevic-thomas/"> Thomas Stojsavljevic </a>
+  Location: Bossone 709
+  Category: Seminar
+- DateTime: 10/29/2019 3:30 PM
+  Title: Coevolution of social behavior and social networks
+  Speaker: <a href="https://live-sas-bio.pantheon.sas.upenn.edu/people/erol-akcay">Erol Akcay </a>
+  Location: PISB 104
+  Category: Seminar
+- DateTime: 10/29/2019 2:30 PM
+  Title: Bio-inspired machine learning
+  Speaker: Edward Kim
+  Location: Bossone 302
+  Category: Seminar
+- DateTime: 10/22/2019 9:00 AM
+  Title: <a href="https://drexel.edu/~/media/Files/medicine/drexel-pdfs/events/Drexel-Institute-Molecular-Medicine-Infectious-Disease-Workshop-Series-2019.ashx?la=en">2019 IMMID Workshop on Applications of Artificial Intelligence to Microbial Genomics in Health and Disease</a>
+  Speaker: <a href="http://drexeleesi.com">Gail Rosen</a>, <a href="https://drexel.edu/medicine/academics/graduate-school/microbiology-immunology/our-students-alumni/#KevinRaible">Kevin Raible </a> , <a href="http://hyphy.org/w/index.php/Sergei_L_Kosakovsky_Pond">Sergei Pond </a> , Amanda Platt, <a href="https://drexel.edu/medicine/faculty/profiles/joshua-earl/">Joshua Earl</a>, <a href="http://www.levy-lab.com/">Maayan Levy</a>, Donald Hall, Zhengqiao Zhao, Haley Majer, Kaytie Innamorati, <a href="https://drexel.edu/medicine/faculty/profiles/will-dampier/">Will Dampier</a>, Dayla Socarras, Danielle Piazza
+  Location: Geary Auditorium A, 245 15th St., New College Building
+  Category: Seminar
+- DateTime: 10/9/2019 4:00 PM
+  Title: The Roles of Gene Duplication and Protein Evolution in the Evolution of the Genotype-Phenotype Map
+  Speaker: <a href="http://igem.temple.edu/people/person/3549bdb95cb9eb1dfef1b609d5f0563b"> David Liberles </a>
+  Location: New College Building, Geary Auditorium
+  Category: Seminar
